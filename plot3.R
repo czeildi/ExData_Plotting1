@@ -6,7 +6,7 @@ data <- mutate(data, Date = as.Date(Date, "%d/%m/%Y"))
 data <- subset(data, subset = Date %in% c(as.Date("2007-02-01"),as.Date("2007-02-02")))
 
 data <- mutate(data, DateTime = as.POSIXct(paste(data$Date, data$Time), format="%Y-%m-%d %H:%M:%S"))
-png(file = "plot3.png")
+png(file = "plot3.png", width = 480, height = 480)
 par(pty = "s")
 plot(data$DateTime, data$Sub_metering_1, type = "l", col = "black", ylab = "Energy sub metering", xlab=  "")
 lines(data$DateTime, data$Sub_metering_2, type = "l", col = "red")
