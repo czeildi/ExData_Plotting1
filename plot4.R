@@ -9,7 +9,7 @@ data <- subset(data, subset = Date %in% c(as.Date("2007-02-01"),as.Date("2007-02
 data <- mutate(data, DateTime = as.POSIXct(paste(data$Date, data$Time), format="%Y-%m-%d %H:%M:%S"))
 
 #opening connection with graphic device for plotting to png file
-png(file = "plot4.png", width = 480, height = 480)
+png(file = "plot4.png")
 
 # for displaying 4 plots in a file
 par(mfrow = c(2,2))
